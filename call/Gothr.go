@@ -54,8 +54,9 @@ func get_count() int{
 
 
 func ac_st(c chan int,ev Curt){
-	ch := make(chan int,GO_COUNT_MAX)
+	ch := maake(chan int,GO_COUNT_MAX)
 	for ic := 1; ic <= GO_COUNT_MAX; ic ++ {
+		fmt.Print("calling\n")
 		go DoStuff(ch,ev)
 	}
 	<- ch
